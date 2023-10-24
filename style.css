@@ -1,0 +1,36 @@
+html body{
+    margin: 0;
+}
+body{
+    background-image: url(img/casaKameDragonBall.jpg);
+    background-position: fixed;
+    color: white;
+    font-family: monospace;
+    font-size: large;
+}
+main{
+    padding: 50px;
+    background-color: rgba(233, 123, 83, 0.8);
+    width: 70%;
+    margin: 150px auto;
+    box-shadow: 5px 5px 15px white, -5px -5px 15px white;
+}
+form{
+    margin: 50px 0px;
+}
+h2+input{
+    display: none;
+}
+input[type="text"]{
+    padding-left: 10px;
+}
+input[name="idJesuita"]{
+    width: 60px
+}
+input[name="nombre"]{
+    width: 100px
+}
+div{
+    text-align: center;
+    padding: 50px;
+}
