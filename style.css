@@ -9,28 +9,41 @@ body{
     font-family: monospace;
     font-size: large;
 }
-main{
-    padding: 50px;
+.contenedor{
+    padding: 20px 50px 50px 50px;
     background-color: rgba(233, 123, 83, 0.8);
-    width: 50%;
-    margin: 150px auto;
+    width: 40%;
+    margin: 100px auto;
     box-shadow: 5px 5px 15px white, -5px -5px 15px white;
 }
 form{
     margin: 50px 0px;
 }
-h2+input{
+input[name="seccion"]{
     display: none;
 }
 input[type="text"]{
     padding-left: 10px;
+    width: 150px;
 }
-input[name="idJesuita"]{
-    width: 60px
-}
-input[name="nombre"]{
-    width: 100px
-}
-div{
+footer{
     text-align: center;
+}
+header{
+    text-align: center;
+}
+button{
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+}
+input[type="submit"]{
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
+}
+input[type="reset"]{
+    width: 100px;
+    height: 30px;
+    border-radius: 15px;
 }

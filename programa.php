@@ -8,47 +8,57 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <main>
+        <div class="contenedor">
             <?php
                 require 'conexion.php';
                 require 'consultas.php';
+                require 'class_jesuita.php';
+                require 'class_lugar.php';
                 $conexion = mysqli_connect($servidorbd, $usuario, $contraseña, $basedatos);
 
+                // Instanciamos Objetos
+                if($_POST['seccion'] == 'jesuita'){
 
-                if(isset($_POST['accion']) && $_POST['accion'] == "alta"){
-                    // Alta de jesuita
+                    $jesuita = new Jesuita($_POST['idJesuita'], $_POST['nombre'], $_POST['firma']);
 
-                    $nombre = $_POST['nombre'];
-                    $idJesuita = $_POST['idJesuita'];
-                    $firma = $_POST['firma'];
-                    $sql = alta($idJesuita, $nombre, $firma);
-                    echo $sql;
-                    $resultado = mysqli_query($conexion, $sql);
-                    echo $resultado;
+                    if($_POST['accion'] == 'Alta'){
+
+                        $jesuita->aniadir($conexion);
+
+                    }else if($_POST['accion'] == 'Modificar'){
+
+                        $jesuita->modificar($conexion);
+
+                    }else if($_POST['accion'] == 'Borrar'){
+
+                        $jesuita->borrar($conexion);
+
+                    }else
+                        echo "Error en la carga de datos";
                     
-                }else if(isset($_POST['accion']) && $_POST['accion'] == "modificacion"){
-                    // Modificación de jesuita
+                }else if($_POST['seccion'] == 'lugar'){
 
-                    $nombre = $_POST['nombre'];
-                    $idJesuita = $_POST['idJesuita'];
-                    $firma = $_POST['firma'];
-                    $sql = modificacion($idJesuita, $nombre, $firma);
-                    echo $sql;
-                    $resultado = mysqli_query($conexion, $sql);
-                    echo $resultado;
+                    $lugar = new Lugar($_POST['ip'], $_POST['lugar'], $_POST['descripcion']);
 
-                }else if(isset($_POST['accion']) && $_POST['accion'] == "borrado"){
-                    // Borrado de jesuita
+                    if($_POST['accion'] == 'Alta'){
 
-                    $idJesuita = $_POST['idJesuita'];
-                    $sql = borrado($idJesuita);
-                    echo $sql;
-                    $resultado = mysqli_query($conexion, $sql);
-                    echo $resultado;
+                        $lugar->aniadir($conexion);
+
+                    }else if($_POST['accion'] == 'Modificar'){
+
+                        $lugar->modificar($conexion);
+
+                    }else if($_POST['accion'] == 'Borrar'){
+
+                        $lugar->borrar($conexion);
+
+                    }else
+                        echo "Error en la carga de datos";
+
+                }else if($_POST['seccion'] == 'visita'){
 
                 }else{
-                    // Error de carga
-                    echo "<h2>Error de carga de datos</h2>";
+                    echo "Error en la carga de datos";
                 }
 
                 $conexion->close();
@@ -56,6 +66,6 @@
             <div>
                 <a href="index.html"><button>Volver</button></a> 
             </div>
-        </main>
+        </div>
     </body>
 </html>

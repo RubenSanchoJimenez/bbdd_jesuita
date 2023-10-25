@@ -3,123 +3,107 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Alta_Modificación_Borrado</title>
+        <title>CRUD_Jesuitas</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <main>
+        <div id="jesuita" class="contenedor">
             <form method="post" action="programa.php">
-                <div><h1>Jesuitas (Funcional con funciones)</h1></div>
-                <!--Alta Jesuita-->
-                <h2>Alta de jesuita</h2>
-                <input type="text" value="alta" name="accion">
+                <header><h1>Formulario Jesuitas</h1></header>
+                <input name="seccion" value="jesuita">
                 <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita">
+                <input type="text" name="idJesuita" placeholder="idJesuita" required>
                 <label>Nombre: </label>
                 <input type="text" name="nombre" placeholder="Nombre">
                 <label>Firma: </label>
                 <input type="text" name="firma" placeholder="Firma">
+                <select name="accion" id="accion">
+                    <option value="Alta">Alta</option>
+                    <option value="Modificar">Modificar</option>
+                    <option value="Borrar">Borrar</option>
+                </select><br><br>
+                <input type="submit" name="Enviar">
+                <input type="reset" name="Resetear">
+            </form>
+            <hr>
+            <footer>
+                <button onclick="mostrarJesuita()">Jesuitas</button>
+                <button onclick="mostrarLugar()">Lugares</button>
+                <button onclick="MostrarVisita()">Visitas</button>
+            </footer>
+        </div>
+
+        <div class="contenedor" id="lugar">
+            <form method="post" action="programa.php">
+                <header><h1>Formulario Lugar</h1></header>
+                <input name="seccion" value="lugar">
+                <label>IP: </label>
+                <input type="text" name="ip" placeholder="IP" required>
+                <label>Lugar: </label>
+                <input type="text" name="lugar" placeholder="Lugar">
+                <label>Descripción: </label>
+                <input type="text" name="descripcion" placeholder="Descripción">
+                <select name="accion" id="accion">
+                    <option value="Alta">Alta</option>
+                    <option value="Modificar">Modificar</option>
+                    <option value="Borrar">Borrar</option>
+                </select><br><br>
+                <input type="submit" name="Enviar">
+                <input type="reset" name="Resetear">
+            </form>
+            <hr>
+            <footer>
+                <button onclick="mostrarJesuita()">Jesuitas</button>
+                <button onclick="mostrarLugar()">Lugares</button>
+                <button onclick="MostrarVisita()">Visitas</button>
+            </footer>
+        </div>
+
+        <div id="visita" class="contenedor">
+            <form method="post" action="programa.php">
+                <header><h1>Formulario Visitas</h1></header>
+                <!--Alta Visita-->
+                <h2>Alta de visita</h2>
+                <input type="text" value="alta" name="accion">
+                <label>idJesuita: </label>
+                <input type="text" name="idVisita" placeholder="idVisita">
+                <label>Nombre: </label>
+                <input type="text" name="nombre" placeholder="Nombre">
+                <label>Firma: </label>
+                <input type="text" name="firma" placeholder="Firma"><br><br>
                 <input type="submit" name="Enviar">
                 <input type="reset" name="Resetear">
             </form>
             <form method="post" action="programa.php">
-                <!--Modificación Jesuita-->
-                <h2>Modificación de jesuita</h2>
+                <!--Listar Visita-->
+                <h2>Listado de visita</h2>
                 <input type="text" value="modificacion" name="accion">
                 <label>idJesuita: </label>
                 <input type="text" name="idJesuita" placeholder="idJesuita">
                 <label>Nombre: </label>
                 <input type="text" name="nombre" placeholder="Nombre">
                 <label>Firma: </label>
-                <input type="text" name="firma" placeholder="Firma">
+                <input type="text" name="firma" placeholder="Firma"><br><br>
                 <input type="submit" name="Enviar">
                 <input type="reset" name="Resetear">
             </form>
             <form method="post" action="programa.php">
-                <!--Borrado Jesuita-->
-                <h2>Borrado de jesuita</h2>
+                <!--Borrado Visita-->
+                <h2>Borrado de visita</h2>
                 <input type="text" value="borrado" name="accion">
                 <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita">
+                <input type="text" name="idJesuita" placeholder="idJesuita"><br><br>
                 <input type="submit" name="Enviar">
                 <input type="reset" name="Resetear">
             </form>
-        </main>
-        <main>
-            <form method="post" action="programa.php">
-                <div><h1>Lugares</h1></div>
-                <!--Alta Jesuita-->
-                <h2>Alta de jesuita</h2>
-                <input type="text" value="alta" name="accion">
-                <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita">
-                <label>Nombre: </label>
-                <input type="text" name="nombre" placeholder="Nombre">
-                <label>Firma: </label>
-                <input type="text" name="firma" placeholder="Firma">
-                <input type="submit" name="Enviar">
-                <input type="reset" name="Resetear">
-            </form>
-            <form method="post" action="programa.php">
-                <!--Modificación Jesuita-->
-                <h2>Modificación de jesuita</h2>
-                <input type="text" value="modificacion" name="accion">
-                <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita">
-                <label>Nombre: </label>
-                <input type="text" name="nombre" placeholder="Nombre">
-                <label>Firma: </label>
-                <input type="text" name="firma" placeholder="Firma">
-                <input type="submit" name="Enviar">
-                <input type="reset" name="Resetear">
-            </form>
-            <form method="post" action="programa.php">
-                <!--Borrado Jesuita-->
-                <h2>Borrado de jesuita</h2>
-                <input type="text" value="borrado" name="accion">
-                <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita">
-                <input type="submit" name="Enviar">
-                <input type="reset" name="Resetear">
-            </form>
-        </main>
-        <main>
-            <form method="post" action="programa.php">
-                <div><h1>Visitas</h1></div>
-                <!--Alta Jesuita-->
-                <h2>Alta de jesuita</h2>
-                <input type="text" value="alta" name="accion">
-                <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita">
-                <label>Nombre: </label>
-                <input type="text" name="nombre" placeholder="Nombre">
-                <label>Firma: </label>
-                <input type="text" name="firma" placeholder="Firma">
-                <input type="submit" name="Enviar">
-                <input type="reset" name="Resetear">
-            </form>
-            <form method="post" action="programa.php">
-                <!--Modificación Jesuita-->
-                <h2>Modificación de jesuita</h2>
-                <input type="text" value="modificacion" name="accion">
-                <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita">
-                <label>Nombre: </label>
-                <input type="text" name="nombre" placeholder="Nombre">
-                <label>Firma: </label>
-                <input type="text" name="firma" placeholder="Firma">
-                <input type="submit" name="Enviar">
-                <input type="reset" name="Resetear">
-            </form>
-            <form method="post" action="programa.php">
-                <!--Borrado Jesuita-->
-                <h2>Borrado de jesuita</h2>
-                <input type="text" value="borrado" name="accion">
-                <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita">
-                <input type="submit" name="Enviar">
-                <input type="reset" name="Resetear">
-            </form>
-        </main>
+            <hr>
+            <footer>
+                <button onclick="mostrarJesuita()">Jesuitas</button>
+                <button onclick="mostrarLugar()">Lugares</button>
+                <button onclick="MostrarVisita()">Visitas</button>
+            </footer>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
+
