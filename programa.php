@@ -11,46 +11,46 @@
         <div class="contenedor">
             <?php
                 require 'conexion.php';
-                require 'consultas.php';
-                require 'class_jesuita.php';
-                require 'class_lugar.php';
+                require 'jesuita.php';
+                require 'lugar.php';
+                require 'visita.php';
                 $conexion = mysqli_connect($servidorbd, $usuario, $contraseña, $basedatos);
 
                 // Instanciamos Objetos
                 if($_POST['seccion'] == 'jesuita'){
 
-                    $jesuita = new Jesuita($_POST['idJesuita'], $_POST['nombre'], $_POST['firma']);
+                    $jesuita = new Jesuita($_POST['idJesuita'], $_POST['nuevoId'], $_POST['nombre'], $_POST['firma'], $conexion);
 
                     if($_POST['accion'] == 'Alta'){
 
-                        $jesuita->aniadir($conexion);
+                        $jesuita->aniadir();
 
                     }else if($_POST['accion'] == 'Modificar'){
 
-                        $jesuita->modificar($conexion);
+                        $jesuita->modificar();
 
                     }else if($_POST['accion'] == 'Borrar'){
 
-                        $jesuita->borrar($conexion);
+                        $jesuita->borrar();
 
                     }else
                         echo "Error en la carga de datos";
                     
                 }else if($_POST['seccion'] == 'lugar'){
 
-                    $lugar = new Lugar($_POST['ip'], $_POST['lugar'], $_POST['descripcion']);
+                    $lugar = new Lugar($_POST['ip'], $_POST['nuevoId'], $_POST['lugar'], $_POST['descripcion'], $conexion);
 
                     if($_POST['accion'] == 'Alta'){
 
-                        $lugar->aniadir($conexion);
+                        $lugar->aniadir();
 
                     }else if($_POST['accion'] == 'Modificar'){
 
-                        $lugar->modificar($conexion);
+                        $lugar->modificar();
 
                     }else if($_POST['accion'] == 'Borrar'){
 
-                        $lugar->borrar($conexion);
+                        $lugar->borrar();
 
                     }else
                         echo "Error en la carga de datos";

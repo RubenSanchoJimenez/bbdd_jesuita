@@ -11,17 +11,22 @@
             <form method="post" action="programa.php">
                 <header><h1>Formulario Jesuitas</h1></header>
                 <input name="seccion" value="jesuita">
-                <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita" required>
-                <label>Nombre: </label>
-                <input type="text" name="nombre" placeholder="Nombre">
-                <label>Firma: </label>
-                <input type="text" name="firma" placeholder="Firma">
-                <select name="accion" id="accion">
-                    <option value="Alta">Alta</option>
-                    <option value="Modificar">Modificar</option>
-                    <option value="Borrar">Borrar</option>
-                </select><br><br>
+                <div><label>Número de puesto: </label></div>
+                <div>
+                    <input type="text" name="idJesuita" placeholder="Número de puesto">
+                    <input type="text" name="nuevoId" id="nuevoIdJesuita" placeholder="Nuevo número">
+                </div>
+                <div><label>Nombre: </label></div>
+                <div><input type="text" name="nombre" placeholder="Nombre"></div>
+                <div><label>Firma: </label></div>
+                <div><input type="text" name="firma" placeholder="Firma"></div>
+                <div>
+                    <select name="accion" id="accionJesuita">
+                        <option value="Alta">Alta</option>
+                        <option value="Modificar">Modificar</option>
+                        <option value="Borrar">Borrar</option>
+                    </select>
+                </div>
                 <input type="submit" name="Enviar">
                 <input type="reset" name="Resetear">
             </form>
@@ -37,17 +42,22 @@
             <form method="post" action="programa.php">
                 <header><h1>Formulario Lugar</h1></header>
                 <input name="seccion" value="lugar">
-                <label>IP: </label>
-                <input type="text" name="ip" placeholder="IP" required>
-                <label>Lugar: </label>
-                <input type="text" name="lugar" placeholder="Lugar">
-                <label>Descripción: </label>
-                <input type="text" name="descripcion" placeholder="Descripción">
-                <select name="accion" id="accion">
-                    <option value="Alta">Alta</option>
-                    <option value="Modificar">Modificar</option>
-                    <option value="Borrar">Borrar</option>
-                </select><br><br>
+                <div><label>Direción IP: </label></div>
+                <div>
+                    <input type="text" name="ip" placeholder="Dirección IP">
+                    <input type="text" name="nuevoId" id="nuevoIpLugar" placeholder="Nueva IP">
+                </div>
+                <div><label>Lugar: </label></div>
+                <div><input type="text" name="lugar" placeholder="Lugar"></div>
+                <div><label>Descripción: </label></div>
+                <div><input type="text" name="descripcion" placeholder="Descripción"></div>
+                <div>
+                    <select name="accion" id="accionLugar">
+                        <option value="Alta">Alta</option>
+                        <option value="Modificar">Modificar</option>
+                        <option value="Borrar">Borrar</option>
+                    </select>
+                </div>
                 <input type="submit" name="Enviar">
                 <input type="reset" name="Resetear">
             </form>

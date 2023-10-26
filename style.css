@@ -47,3 +47,6 @@ input[type="reset"]{
     height: 30px;
     border-radius: 15px;
 }
+div{
+    padding: 10px 0px;
+}
