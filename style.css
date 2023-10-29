@@ -50,3 +50,13 @@ input[type="reset"]{
 div{
     padding: 10px 0px;
 }
+table{
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: rgb(233, 123, 83)
+}
+table td,th{
+    padding: 5px 20px;
+    border: 2px solid white;
+    font-size: x-large;
+}

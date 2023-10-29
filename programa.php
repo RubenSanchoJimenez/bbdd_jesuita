@@ -52,6 +52,10 @@
 
                         $lugar->borrar();
 
+                    }else if($_POST['accion'] == 'Listar'){
+
+                        $lugar->listar();
+
                     }else
                         echo "Error en la carga de datos";
 
