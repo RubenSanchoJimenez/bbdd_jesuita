@@ -72,17 +72,15 @@
 
         <div id="visita" class="contenedor">
             <form method="post" action="programa.php">
-                <header><h1>Formulario Lugar</h1></header>
-                <input name="seccion" value="lugar">
-                <div><label>Direción IP: </label></div>
+                <header><h1>Formulario Visitas</h1></header>
+                <input name="seccion" value="visita">
                 <div>
-                    <input type="text" name="ip" placeholder="Dirección IP">
-                    <input type="text" name="nuevoId" id="nuevoIpLugar" placeholder="Nueva IP">
+                    <input type="text" name="idVisita" placeholder="Numero de visita">
                 </div>
                 <div><label>Lugar: </label></div>
-                <div><input type="text" name="lugar" placeholder="Lugar"></div>
-                <div><label>Descripción: </label></div>
-                <div><input type="text" name="descripcion" placeholder="Descripción"></div>
+                <div><input type="text" name="visitaLugar" placeholder="Lugar"></div>
+                <div><label>Jesuita: </label></div>
+                <div><input type="text" name="visitaJesuita" placeholder="Jesuita"></div>
                 <div>
                     <select name="accion" id="accionVisita">
                         <option value="Alta">Alta</option>

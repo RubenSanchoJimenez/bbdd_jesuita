@@ -89,7 +89,7 @@
                 $conexion->close();
             ?>
             <div>
-                <a href="index.html"><button>Volver</button></a> 
+                <a href="index.php"><button>Volver</button></a> 
             </div>
         </div>
     </body>

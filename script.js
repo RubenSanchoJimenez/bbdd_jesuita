@@ -10,11 +10,15 @@ const nuevoIdInputJesuita = document.getElementById("nuevoIdJesuita");
 const selectLugar = document.getElementById("accionLugar");
 const nuevoIdInputLugar = document.getElementById("nuevoIpLugar");
 
+const selectVisita = document.getElementById("accionVisita")
+const numVisita = document.getElementsByName("idVisita")[0]
+
 divJesuita.style.display = "block"
 divLugar.style.display = "none"
 divVisita.style.display = "none"
-nuevoIdInputJesuita.style.display = "none";
-nuevoIdInputLugar.style.display = "none";
+nuevoIdInputJesuita.style.display = "none"
+nuevoIdInputLugar.style.display = "none"
+numVisita.style.display = "none"
 
 function mostrarJesuita() {
     divJesuita.style.display = "block"
@@ -51,6 +55,14 @@ document.addEventListener("DOMContentLoaded", function() {
             nuevoIdInputLugar.style.display = "block";
         } else {
             nuevoIdInputLugar.style.display = "none";
+        }
+    });
+
+    selectVisita.addEventListener("change", function() {
+        if (selectVisita.value === "Borrar") {
+            numVisita.style.display = "block";
+        } else {
+            numVisita.style.display = "none";
         }
     });
 });
