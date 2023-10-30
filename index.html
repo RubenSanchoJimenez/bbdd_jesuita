@@ -72,38 +72,25 @@
 
         <div id="visita" class="contenedor">
             <form method="post" action="programa.php">
-                <header><h1>Formulario Visitas</h1></header>
-                <!--Alta Visita-->
-                <h2>Alta de visita</h2>
-                <input type="text" value="alta" name="accion">
-                <label>idJesuita: </label>
-                <input type="text" name="idVisita" placeholder="idVisita">
-                <label>Nombre: </label>
-                <input type="text" name="nombre" placeholder="Nombre">
-                <label>Firma: </label>
-                <input type="text" name="firma" placeholder="Firma"><br><br>
-                <input type="submit" name="Enviar">
-                <input type="reset" name="Resetear">
-            </form>
-            <form method="post" action="programa.php">
-                <!--Listar Visita-->
-                <h2>Listado de visita</h2>
-                <input type="text" value="modificacion" name="accion">
-                <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita">
-                <label>Nombre: </label>
-                <input type="text" name="nombre" placeholder="Nombre">
-                <label>Firma: </label>
-                <input type="text" name="firma" placeholder="Firma"><br><br>
-                <input type="submit" name="Enviar">
-                <input type="reset" name="Resetear">
-            </form>
-            <form method="post" action="programa.php">
-                <!--Borrado Visita-->
-                <h2>Borrado de visita</h2>
-                <input type="text" value="borrado" name="accion">
-                <label>idJesuita: </label>
-                <input type="text" name="idJesuita" placeholder="idJesuita"><br><br>
+                <header><h1>Formulario Lugar</h1></header>
+                <input name="seccion" value="lugar">
+                <div><label>Direción IP: </label></div>
+                <div>
+                    <input type="text" name="ip" placeholder="Dirección IP">
+                    <input type="text" name="nuevoId" id="nuevoIpLugar" placeholder="Nueva IP">
+                </div>
+                <div><label>Lugar: </label></div>
+                <div><input type="text" name="lugar" placeholder="Lugar"></div>
+                <div><label>Descripción: </label></div>
+                <div><input type="text" name="descripcion" placeholder="Descripción"></div>
+                <div>
+                    <select name="accion" id="accionVisita">
+                        <option value="Alta">Alta</option>
+                        <option value="Estadistica">Estadistica</option>
+                        <option value="Borrar">Borrar</option>
+                        <option value="Listar">Listar</option>
+                    </select>
+                </div>
                 <input type="submit" name="Enviar">
                 <input type="reset" name="Resetear">
             </form>

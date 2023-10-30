@@ -53,13 +53,34 @@
                         $lugar->borrar();
 
                     }else if($_POST['accion'] == 'Listar'){
-
+                        
                         $lugar->listar();
 
                     }else
                         echo "Error en la carga de datos";
 
                 }else if($_POST['seccion'] == 'visita'){
+
+                    $visita = new Visita($_POST['idVisita'], $_POST['jesuita'], $_POST['lugar'], $conexion);
+
+                    if($_POST['accion'] == 'Alta'){
+
+                        $visita->realizarVisita();
+
+                    }else if($_POST['accion'] == 'Estadistica'){
+
+                        $visita->estadistica();
+
+                    }else if($_POST['accion'] == 'Borrar'){
+
+                        $visita->borrar();
+
+                    }else if($_POST['accion'] == 'Listar'){
+                        
+                        $visita->listar();
+
+                    }else
+                        echo "Error en la carga de datos";
 
                 }else{
                     echo "Error en la carga de datos";

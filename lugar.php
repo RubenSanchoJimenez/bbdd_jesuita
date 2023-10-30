@@ -45,4 +45,21 @@
 
             echo '<h2>Borrado realizado</h2>';
         }
+
+        function listar() {
+
+            $sql = "SELECT *
+                    FROM lugar;";
+            
+            $resultado = $this->conexion->query($sql);
+        
+            echo "<table>";
+            echo "<tr><th>IP</th><th>Lugar</th><th>Descripción</th></tr>";
+
+            while ($elemento = $resultado->fetch_assoc()) {
+                echo "<tr><td>{$elemento['ip']}</td><td>{$elemento['lugar']}</td><td>{$elemento['descripcion']}</td></tr>";
+            }
+
+            echo "</table>";
+        }
     }
