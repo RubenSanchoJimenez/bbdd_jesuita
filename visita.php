@@ -40,14 +40,13 @@
                     <option value="Listar"></option>    
                 </select>';
             echo "<table>";
-            echo "<tr><th>Jesuita</th><th>Lugar</th><th>Fecha y Hora</th><th>Borrar</th></tr>";
+            echo "<tr><th>Jesuita</th><th>Lugar</th><th>Fecha y Hora</th><th>Borrar</th><th>Modificar</th></tr>";
         
             while ($elemento = $resultado->fetch_assoc()) {
-                echo "<tr><td>{$elemento['nombre']}</td><td>{$elemento['lugar']}</td><td>{$elemento['fechaHora']}</td><td><input type='checkbox' value='{$elemento['idVisita']}'></td></tr>";
+                echo "<tr><td>{$elemento['nombre']}</td><td>{$elemento['lugar']}</td><td>{$elemento['fechaHora']}</td><td><button>Borrar</button></td><td><button>Modificar</button></td></tr>";
             }
         
             echo "</table>";
-            echo "<div id='listaBorrar'><input type='submit'></div>";
             echo "</form>";
         }
         

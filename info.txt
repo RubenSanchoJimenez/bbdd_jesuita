@@ -1,0 +1,15 @@
+Requerimientos CRUD
+
+--> Cuando se realiza una modificación aparecerá los inputs rellenos con la información
+
+--> Después del query que dará error usar la función errno o error
+
+--> Dentro de los métodos se harán todas las validaciones necesarias
+
+--> 1º Revisrar validaciones
+--> 2º Coger solo la consulta SQL 
+--> La conexión ya no estará en el constructor, estará en el método 
+
+--> 2 carpetas 
+    --> 1ª Controladores 
+    --> 2ª Métodos

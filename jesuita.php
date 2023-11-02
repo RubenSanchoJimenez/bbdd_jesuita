@@ -19,7 +19,7 @@
         function aniadir(){
 
             $sql = "INSERT INTO jesuita
-                        SET idJesuita = '$this->idJesuita', nombre = '$this->nombre', firma = '$this->firma'";
+                        SET idJesuita = $this->idJesuita, nombre = '$this->nombre', firma = '$this->firma'";
 
             $resultado = $this->conexion->query($sql);
 
@@ -40,7 +40,7 @@
         function borrar(){
 
             $sql = "DELETE FROM jesuita
-                        WHERE idJesuita = '$this->idJesuita';";
+                        WHERE idJesuita = $this->idJesuita;";
 
             $resultado = $this->conexion->query($sql);
 
