@@ -6,10 +6,10 @@ Requerimientos CRUD
 
 --> Dentro de los métodos se harán todas las validaciones necesarias
 
---> 1º Revisrar validaciones
+--> 1º Revisar validaciones
 --> 2º Coger solo la consulta SQL 
 --> La conexión ya no estará en el constructor, estará en el método 
 
 --> 2 carpetas 
     --> 1ª Controladores 
-    --> 2ª Métodos
+    --> 2ª Modelos
